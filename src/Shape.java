@@ -1,2 +1,3 @@
-package PACKAGE_NAME;public enum Shape {
+public enum Shape {
+    CLUB, DIAMOND, SPADE, HEART
 }

@@ -1,2 +1,3 @@
-package PACKAGE_NAME;public enum Value {
+public enum Value {
+    ACE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEEN, JACK, KING, QUEEN
 }
