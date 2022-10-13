@@ -1,5 +1,2 @@
-public enum Value {
-
-    TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEEN, JACK, KING, QUEEN, ACE
-
+package PACKAGE_NAME;public enum Value {
 }
