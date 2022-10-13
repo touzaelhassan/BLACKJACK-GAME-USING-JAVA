@@ -12,6 +12,8 @@ public class Main {
 
         deck.deckBuilder();
 
+        deck.deckMixer();
+
         System.out.println(deck);
 
     }
