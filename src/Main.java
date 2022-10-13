@@ -57,7 +57,7 @@ public class Main {
                   System.out.println("           ");
                   System.out.println(playerDeck);
                   System.out.println("YOUR HAND IS VALUED AT : " + playerDeck.cardsValue());
-                  System.out.println("                  ");
+                  System.out.println("                 ");
 
                   System.out.println("THE DEALER HAND :");
                   System.out.println("-----------------");
@@ -89,6 +89,16 @@ public class Main {
                           endRound = true;
                           break;
                       }
+
+                      if(playerDeck.cardsValue() == 21){
+                          System.out.println("YOUR HAND IS VALUED AT : " + playerDeck.cardsValue());
+                          System.out.println("CONGRATS !!! - YOU HAVE A BLACKJACK");
+                          System.out.println("                                   ");
+                          playerMoney += playerBet;
+                          endRound = true;
+                          break;
+                      }
+
                   }
 
                   if(choice == 2){
@@ -102,13 +112,45 @@ public class Main {
               System.out.println("--------------");
               System.out.println(dealerDeck);
               System.out.println("              ");
+              System.out.println("DEALER HAND VALUED AT : " + dealerDeck.cardsValue());
 
-              System.out.println("*******************************");
-              System.out.println("*******************************");
-              System.out.println("*******************************");
+            while(dealerDeck.cardsValue() < 17 && endRound == false){
+                dealerDeck.distributeCard(mainDeck);
+                System.out.println("DEALER DRAWS : " + dealerDeck.getCard(dealerDeck.deckSize() - 1).toString());
+            }
 
-              System.out.println("DEALER HAND : " + dealerDeck.cardsValue());
-              System.out.println("PLAYER HAND : " + playerDeck.cardsValue());
+            System.out.println("                                       ");
+            System.out.println("***************************************");
+            System.out.println("                                       ");
+            System.out.println("DEALER'S HAND IS VALUED AT : " + dealerDeck.cardsValue());
+            System.out.println("                             ");
+
+            if(dealerDeck.cardsValue() > 21 && endRound == false){
+                System.out.println("DEALER BUSTS !!! - YOU WIN");
+                playerMoney += playerBet;
+                endRound = true;
+            }
+
+            if(dealerDeck.cardsValue() > playerDeck.cardsValue() && endRound == false){
+                System.out.println("DEALER BEATS YOU !!! - YOU LOSE");
+                playerMoney -= playerBet;
+                endRound = true;
+            }
+
+            if(dealerDeck.cardsValue() < playerDeck.cardsValue() && endRound == false){
+                System.out.println("YOU BEAT THE DEALER - YOU WIN");
+                playerMoney += playerBet;
+                endRound = true;
+            }
+
+            if(playerDeck.cardsValue() == dealerDeck.cardsValue() && endRound == false){
+
+                System.out.println("PUSH");
+                endRound = true;
+
+            }
+
+            System.out.println("                                        ");
 
             playerDeck.moveAllToDeck(mainDeck);
             dealerDeck.moveAllToDeck(mainDeck);
