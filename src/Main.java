@@ -8,6 +8,12 @@ public class Main {
         System.out.println("=====================================");
         System.out.println("                                     ");
 
+        Deck deck = new Deck();
+
+        deck.deckBuilder();
+
+        System.out.println(deck);
+
     }
 
 }
