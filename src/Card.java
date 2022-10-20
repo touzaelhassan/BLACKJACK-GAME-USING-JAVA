@@ -8,10 +8,10 @@ public class Card {
         this.value = value;
     }
 
-    public Shape getShape() { return shape; }
     public void setShape(Shape shape) { this.shape = shape; }
-    public Value getValue() { return value; }
     public void setValue(Value value) { this.value = value; }
+    public Shape getShape() { return shape; }
+    public Value getValue() { return value; }
 
     @Override
     public String toString() {

@@ -4,7 +4,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        System.out.println("                                     ");
+        System.out.println("                                       ");
         System.out.println("=======================================");
         System.out.println("|    WELCOME TO THE BLACKJACK GAME    |");
         System.out.println("=======================================");
@@ -20,8 +20,6 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         int playerMoney = 500;
-
-        // THE GAME LOOP
 
         while(playerMoney > 0){
 
@@ -123,6 +121,7 @@ public class Main {
             System.out.println("***************************************");
             System.out.println("                                       ");
             System.out.println("DEALER'S HAND IS VALUED AT : " + dealerDeck.cardsValue());
+            System.out.println("YOUR HAND IS VALUED AT : " + playerDeck.cardsValue());
             System.out.println("                             ");
 
             if(dealerDeck.cardsValue() > 21 && endRound == false){
@@ -144,24 +143,21 @@ public class Main {
             }
 
             if(playerDeck.cardsValue() == dealerDeck.cardsValue() && endRound == false){
-
                 System.out.println("PUSH");
                 endRound = true;
-
             }
 
-            System.out.println("                                        ");
-
+            System.out.println("                                   ");
             playerDeck.moveAllToDeck(mainDeck);
             dealerDeck.moveAllToDeck(mainDeck);
 
         }
 
-        System.out.println("                                      ");
+        System.out.println("                                       ");
         System.out.println("=======================================");
         System.out.println("| GAME OVER !! - YOU ARE OUT OF MONEY |");
         System.out.println("=======================================");
-        System.out.println("                                      ");
+        System.out.println("                                       ");
 
     }
 
